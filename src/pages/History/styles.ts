@@ -64,7 +64,7 @@ export const HistoryList = styled.div`
 
 const STATUS_COLORS = {
   yellow: "yellow-500",
-  green: "blue-500",
+  green: "green-500",
   red: "red-500",
   blue: "blue-500",
 } as const;
