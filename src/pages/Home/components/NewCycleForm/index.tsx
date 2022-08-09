@@ -1,6 +1,12 @@
-import { FormContainer, MinutesAmount, TaskInput } from './styles'
+import { FormContainer, MinutesAmount, TaskInput } from "./styles";
+import { useContext } from "react";
+import { CyclesContext } from "../../../../contexts/CyclesContext";
+import { useFormContext } from "react-hook-form";
 
 export function NewCyleForm() {
+  const { activeCycle } = useContext(CyclesContext);
+  const { register } = useFormContext();
+
   return (
     <FormContainer>
       <label htmlFor="task"> Trabalhando em </label>
@@ -9,7 +15,7 @@ export function NewCyleForm() {
         list="task-suggestions"
         placeholder="Nome do projeto"
         disabled={!!activeCycle}
-        {...register('task')}
+        {...register("task")}
       />
 
       <datalist id="task-suggestions">
@@ -28,9 +34,9 @@ export function NewCyleForm() {
         min={1}
         max={60}
         disabled={!!activeCycle}
-        {...register('minutesAmount', { valueAsNumber: true })}
+        {...register("minutesAmount", { valueAsNumber: true })}
       />
       <span>minutos.</span>
     </FormContainer>
-  )
+  );
 }
