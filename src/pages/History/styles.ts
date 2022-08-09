@@ -66,6 +66,7 @@ const STATUS_COLORS = {
   yellow: "yellow-500",
   green: "blue-500",
   red: "red-500",
+  blue: "blue-500",
 } as const;
 interface StatusProps {
   statusColor: keyof typeof STATUS_COLORS;
